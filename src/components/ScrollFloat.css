@@ -1,0 +1,98 @@
+.scroll-float {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-float-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: inherit;
+}
+
+.char {
+    display: inline-block;
+    font-weight: inherit;
+    will-change: transform, opacity, filter;
+}
+
+/* Section Layout */
+.scroll-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15rem 4rem;
+    background: transparent;
+}
+
+.scroll-container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.scroll-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Lines container */
+.scroll-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+}
+
+/* Title wrapper */
+.scroll-title-wrapper {
+    display: block;
+    overflow: visible !important;
+}
+
+/* Title text */
+.scroll-title-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: inherit;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    font-size: clamp(2rem, 4vw, 4.5rem);
+}
+
+/* Responsive */
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .scroll-content {
+        max-width: 100%;
+        /* allow full width of container */
+        margin: 0 auto;
+        padding: 0;
+        /* small padding from edges */
+        text-align: center;
+    }
+
+    .scroll-title-wrapper {
+        display: block;
+        overflow: visible !important;
+        width: 100%;
+        /* prevent overflow */
+    }
+
+    .scroll-title-text {
+        font-size: clamp(2.5rem, 6vw, 2.5rem);
+        line-height: 1.35;
+        white-space: normal;
+        /* allow wrapping */
+        word-break: break-word;
+        /* break long lines */
+        display: inline-block;
+    }
+
+    .scroll-lines {
+        gap: 0.4em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

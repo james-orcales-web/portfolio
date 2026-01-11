@@ -1,0 +1,67 @@
+.stack-container {
+    position: relative;
+    width: 100%;
+    /* desktop size */
+    height: 700px;
+    /* desktop size */
+    perspective: 700px;
+    margin: 0 auto;
+}
+
+/* Cards wrapper when dragging is disabled or enabled */
+.card-rotate,
+.card-rotate-disabled {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.card-rotate-disabled {
+    cursor: pointer;
+}
+
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img,
+.card-image {
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    background: transparent;
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 1024px) {
+    .stack-container {
+        width: 70vw;
+        /* scale to 70% of viewport width */
+        height: calc(70vw * 1.4);
+        /* maintain approx 500x700 ratio */
+    }
+}
+
+@media (max-width: 640px) {
+    .stack-container {
+        width: 75vw;
+        /* almost full width on small devices */
+        height: calc(90vw * 1.4);
+        /* maintain aspect ratio */
+    }
+
+    .card img,
+    .card-image {
+        width: 100%;
+        height: 100%;
+    }
+}
